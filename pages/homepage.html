@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/navbar.css" >
+  <link rel="stylesheet" href="../style/style.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Market Place</title>
+</head>
+<body>
+  
+
+  <nav class="topnav">
+    <ul>
+      <li><a class="active" href="#">MARKET PLACE</a></li>
+      <li class="nav-dropdown">
+        <a href="javascript:void(0)" class="dropdown-btn">Produtos</a>
+        <div class="dropdown-content"> 
+          <a href="#produto01">Produto 01</a>
+          <a href="#produto02">Produto 02</a>
+          <a href="#produto03">Produto 03</a>
+        </div>
+      </li>
+      <li><a href="#">Contato</a></li>
+      <li class="right"><a  href="#">
+        <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+        Entrar</a></li>
+      <li class="right"><a  href="./carrinho.html">
+        <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+        Carrinho</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="banner">
+      <img src="../img/banner.jpg" alt="My Banner">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row card">
+        <img src="../img/smart_01.jpg" alt="Smartphone 01">
+        <div class="card-content">
+          <h2>Smartphone 01</h2>
+          <div>
+          Fabricante: XXX
+          <br/>
+          Descrição:
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin tellus id iaculis pulvinar. Suspendisse potenti. Vivamus interdum at tortor quis vehicula.</p>
+          Valor: $$,$$
+        </div>
+        <div>
+          <a class="btn orange" onclick="simulaComprar()"> Comprar </a> <button class="btn"> Visualizar </button>
+        </div>
+          
+        </div>
+    </div>
+
+    <div class="row card">
+      <img src="../img/smart_02.jpg" alt="Smartphone 01">
+      <div class="card-content">
+        <h2>Smartphone 02</h2>
+          <div>
+          Fabricante: YYY
+          <br/>
+          Descrição:
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin tellus id iaculis pulvinar. Suspendisse potenti. Vivamus interdum at tortor quis vehicula.</p>
+          Valor: $$,$$
+        </div>
+          <div>
+            <a class="btn orange" onclick="simulaComprar()"> Comprar </a> <button class="btn"> Visualizar </button>
+          </div>
+          
+      </div>
+  </div>
+  <div class="row card">
+    <img src="../img/airpod.jpg" alt="AirPod 01">
+    <div class="card-content">
+      <h2>Air Pod 01</h2>
+      <div>
+        Fabricante: YYY
+        <br/>
+        Descrição:
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin tellus id iaculis pulvinar. Suspendisse potenti. Vivamus interdum at tortor quis vehicula.</p>
+        Valor: $$,$$
+      </div>
+      <div>
+        <a class="btn orange" onclick="simulaComprar()"> Comprar </a> <button class="btn"> Visualizar </button>
+      </div>
+        
+    </div>
+  </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="../js/index.js"></script>
+  
+</body>
+</html>

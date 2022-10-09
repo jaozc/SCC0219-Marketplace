@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head lang="pt-br">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <nav class="topnav">
+        <ul>
+            <li><a href="homepage.html" class="active">MARKET PLACE</a></li>
+            <li class="nav-dropdown">
+                <a href="javascript:void(0)" class="dropdown-btn">Produtos</a>
+                <div class="dropdown-content">
+                    <a href="#produto01">Produto 01</a>
+                    <a href="#produto02">Produto 02</a>
+                    <a href="#produto03">Produto 03</a>
+                </div>
+            </li>
+            <li><a href="#">Contato</a></li>
+            <li class="right"><a href="#">
+                    <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+                    Entrar</a></li>
+            <li class="right"><a href="carrinho.html">
+                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                    Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <p id="Carrinho">Carrinho</p>
+
+    <div class="container" id="caixa-principal">
+        <div class="item">
+            <img class="produto" src="../img/celular.png">
+            <div class="flex-item">
+                <div>
+                    <p class="titulo">Celular</p>
+                </div>
+                
+                <div>
+                    <p class="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard
+                        dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type</p>
+    
+                </div>
+                <div>
+                    <p class="preco">R$ 123,45</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="produto" src="../img/celular.png">
+            <div>
+                <p class="titulo">Celular</p>
+
+                <p class="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type</p>
+
+                <p class="preco">R$ 123,45</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="produto" src="../img/celular.png">
+            <div>
+                <p class="titulo">Celular</p>
+
+                <p class="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type</p>
+
+                <p class="preco">R$ 123,45</p>
+            </div>
+        </div>
+
+
+        <div class="total">
+            <div>
+                <p id="valor-total">Total: R$ 370,35</p>
+            </div>
+            <div> <button class="button" type="button" id="finalizar"
+                    onclick="finalizaCompra()">Finalizar</button> </div>
+        </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+</body>
