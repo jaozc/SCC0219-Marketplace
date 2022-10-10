@@ -25,6 +25,9 @@ Projeto realizado para disciplina de Introdução ao Desenvolvimento Web no segu
   - The system must be responsive, meaning that it should complete assigned tasks within a reasonable time.
 
 ## Project Desciption
+
+Criação de um site de marketplace de produtos eletrônicos.
+
 ###  Milestone 01
   Para a primeira entrega o grupo optou por realizar o mockup das seguintes páginas:
   - Homepage;
