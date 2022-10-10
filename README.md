@@ -3,7 +3,7 @@
 Projeto realizado para disciplina de Introdução ao Desenvolvimento Web no segundo semestre de 2022.  O seguinte projeto tem como intuito a criação de um Marketplace utilizando as ferramentas vistas em aula.
 
 # Students
-  * Henrique Morey Pereira -
+  * Henrique Morey Pereira - 10349508
   * João Gabriel Zanão Costa - 11234266
   * Leonardo Perassoli - 10376026 
 
