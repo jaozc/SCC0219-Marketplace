@@ -1,0 +1,22 @@
+{
+  "name": "scc0219-marketplace",
+  "version": "1.0.0",
+  "description": "Trabalho de Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaozc/SCC0219-Marketplace.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaozc/SCC0219-Marketplace/issues"
+  },
+  "homepage": "https://github.com/jaozc/SCC0219-Marketplace#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

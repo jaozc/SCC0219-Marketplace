@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head lang="pt-br">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/tela_generica.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <nav class="topnav">
+        <ul>
+            <li><a href="homepage.html" class="active">MARKET PLACE</a></li>
+            <li class="nav-dropdown">
+                <a href="javascript:void(0)" class="dropdown-btn">Produtos</a>
+                <div class="dropdown-content">
+                    <a href="#produto01">Produto 01</a>
+                    <a href="#produto02">Produto 02</a>
+                    <a href="#produto03">Produto 03</a>
+                </div>
+            </li>
+            <li><a href="#">Contato</a></li>
+            <li class="right"><a  href="./login.html">
+                <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+                Entrar</a></li>
+            <li class="right"><a href="carrinho.html">
+                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                    Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="caixa-principal">
+        <form id="cadastro_formulario" name="cadastro_formulario">
+            <p>Nome</p>
+            <input type="text" id="nome" name="nome" required>
+            <p>Sobrenome</p>
+            <input type="text" id="sobrenome" name="sobrenome" required>
+            <p>Username</p>
+            <input type="text" id="username" name="username" required>
+            <p>Password</p>
+            <input type="password" id="password" name="password" required>
+            <p>Endereço</p>
+            <input type="text" id="endereco" name="endereco" required>
+            <p>Email</p>
+            <input type="email" id="email" name="email" required>
+            <p>Telefone</p>
+            <input type="text" id="telefone" name="telefone" required>
+
+            <input type="submit" id="enviar" name="enviar" value="enviar">
+        </form>
+    </div>
+
+    <script src="../js/cadastro.js"></script>
+</body>
