@@ -54,6 +54,7 @@
 
 .card img {
   width: 200px;
+  height: 200px;
 }
 
 .card-content {
@@ -87,4 +88,12 @@
   background-color: var(--action-color);
   color: white;
   border: 1px solid var(--action-color)
+}
+
+.conteudo {
+  display : flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
+  word-wrap: break-word;
 }
