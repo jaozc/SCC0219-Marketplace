@@ -7,7 +7,7 @@ window.onload = function() {
       }
       document.getElementById("produtos").innerHTML = JSON.stringify(produtos) 
 }
-
+   
 
 
 document.getElementById("alterar").addEventListener("submit", function() {

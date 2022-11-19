@@ -21,30 +21,10 @@ window.onload = function() {
         }
       }
 
-    // let produtos = {
-    //     "celular1" : {
-    //         "nome" : "Celular Motorola",
-    //         "descricao" : "Celular motorola Celular motorola Celular motorola Celular motorola",
-    //         "valor" : "123,45",
-    //         "imagem" : "AAAA",
-    //     },
-    //     "celular2" : {
-    //         "nome" : "Celular Apple",
-    //         "descricao" : "Celular Apple Celular Apple Celular Apple Celular Apple Celular Apple",
-    //         "valor" : "111",
-    //         "imagem" : "aaaaa"
-    //     },
-    //     "fone1" : {
-    //         "nome" : "Airdots",
-    //         "descricao" : "Airdots Airdots Airdots Airdots Airdots Airdots Airdots Airdots Airdots",
-    //         "valor" : "222",
-    //         "imagem" : "aaaaa"
-    //     }
-    // }
-    
     let produtos = {
     }
 
+    localStorage.setItem("contadorId", 0)
     localStorage.setItem("bancoDeDados", JSON.stringify(bancoDeDados))
     localStorage.setItem("produtos", JSON.stringify(produtos))
 
