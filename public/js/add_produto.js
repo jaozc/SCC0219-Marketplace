@@ -1,10 +1,6 @@
 document.getElementById("add_produto").addEventListener("submit", function() {
-    console.log(document.getElementById("foto"))
-
     converterImagem()
-    
-
-    alert("produto cadastrado   ")
+    alert("produto cadastrado")
 });
 
 function converterImagem() {
@@ -12,7 +8,6 @@ function converterImagem() {
 
     if (receberArquivo.length > 0) {
         var carregarImagem = receberArquivo[0];
-        console.log("2")
 
         var lerArquivo = new FileReader();
 
@@ -24,11 +19,10 @@ function converterImagem() {
                 nome : document.getElementById("nome").value,
                 descricao : document.getElementById("descricao").value,
                 valor : document.getElementById("preco").value,
+                quantidade : document.getElementById("quantidade").value,
                 imagem : imagemBase64
             }
-        
             localStorage.setItem("produtos", JSON.stringify(produtos))
-
         }
         lerArquivo.readAsDataURL(carregarImagem);
     }

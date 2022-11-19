@@ -1,7 +1,6 @@
 document.getElementById("enviar").addEventListener("click", () => cadastraCliente());
 
 function cadastraCliente() {
-    // console.log(document.getElementById("nome"))
 
     let usuario = {
         username: document.getElementById("username").value,

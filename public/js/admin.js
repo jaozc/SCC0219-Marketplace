@@ -1,23 +1,4 @@
-let bancoDeDados = {
-    "admin" : {
-        password: "admin",
-        adminPermission: true,
-        nome: "ADMIN",
-        sobrenome: "",
-        email: "admin@gmail.com",
-        telefone: "",
-        endereco: "",
-    },
-    "a" : {
-        password: "a",
-        adminPermission: false,
-        nome: "nome",
-        sobrenome: "sobrenome",
-        email: "admin@gmail.com",
-        telefone: "0000000",
-        endereco: "rua aaaaaaaaa",
-    }
-}
+let bancoDeDados = JSON.parse(localStorage.getItem("bancoDeDados"))
 mostrar = false
 
 document.getElementById("add_admin").addEventListener("click", function() {
@@ -32,6 +13,11 @@ document.getElementById("add_produto").addEventListener("click", function() {
     location.href = "./adicionar_produto.html"
 });
 
+document.getElementById("sair").addEventListener("click", function() {
+    localStorage.removeItem("usuario")
+    location.href = "./homepage.html"
+});
+
 function pegaUsuariosDoBanco() {
     mostrar = !mostrar
     if(mostrar) {
@@ -41,5 +27,3 @@ function pegaUsuariosDoBanco() {
         document.getElementById("exibir").innerHTML = ""
     }
 }
-
-// document.getElementById("h1").innerHTML = JSON.stringify(localStorage.getItem(bancoDeDados))  

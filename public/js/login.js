@@ -1,5 +1,10 @@
 if(localStorage.hasOwnProperty("usuario")) {
-    location.href = "../pages/usuario.html"
+    if(JSON.parse(localStorage.getItem("usuario"))["adminPermission"]){
+        location.href = "../pages/admin.html"
+    }
+    else{
+        location.href = "../pages/usuario.html"
+    }
 }
 
 let bancoDeDados = JSON.parse(localStorage.getItem("bancoDeDados"))

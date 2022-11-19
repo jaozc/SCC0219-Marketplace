@@ -13,8 +13,6 @@ window.onload = function() {
 }
 
 function constroiProduto(produto) {
-  
-
   let divConteudo = document.createElement("div")
 
   var image = new Image();
@@ -26,6 +24,7 @@ function constroiProduto(produto) {
 
   divConteudo.appendChild(h2)
   divConteudo.appendChild(criaParagrafo(produto, "descricao"))
+  divConteudo.appendChild(criaParagrafo(produto, "quantidade"))
   divConteudo.appendChild(criaParagrafo(produto, "valor"))
   divConteudo.appendChild(criaDivBotoes())
   divConteudo.classList.add("conteudo")

@@ -21,7 +21,7 @@
                 </div>
             </li>
             <li><a href="#">Contato</a></li>
-            <li class="right"><a  href="./login.html">
+            <li class="right"><a href="./login.html">
                 <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
                 Entrar</a></li>
             <li class="right"><a href="carrinho.html">
@@ -31,19 +31,23 @@
     </nav>
 
     <div class="container" id="caixa-principal">
-        <form id="add_admin">
+        <form id="add_admin" >
             <p>Nome</p>
-            <input type="text" id="nome" required></input>
+            <input type="text" id="nome" name="nome" required>
             <p>Sobrenome</p>
-            <input type="text" id="sobrenome" required></input>
-            <p>Email</p>
-            <input type="email" id="email" required></input>
-            <p>Telefone</p>
-            <input type="text" id="telefone" required></input>
+            <input type="text" id="sobrenome" name="sobrenome" required>
+            <p>Username</p>
+            <input type="text" id="username" name="username" required>
+            <p>Password</p>
+            <input type="password" id="password" name="password" required>
             <p>Endereço</p>
-            <input type="text" id="endereco" required></input>
+            <input type="text" id="endereco" name="endereco" required>
+            <p>Email</p>
+            <input type="email" id="email" name="email" required>
+            <p>Telefone</p>
+            <input type="text" id="telefone" name="telefone" required>
             <br><br>
-            <input type="submit" value="Criar administrador"></input>
+            <input type="submit"  value="Criar adm"></input>
         </form>
     </div>
 
