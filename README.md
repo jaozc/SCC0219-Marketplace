@@ -45,7 +45,17 @@ As páginas foram realizadas individualmente pelos 3 membros do grupo, são arqu
 
 ## Test Plan
 
--
+Foram feitos testes manuais para checar se o código funciona de maneira apropriada. O LocalStorage foi utilizado para armazenar os produtos e usuarios do site, imitando um banco de dados.
+
+Testes realizados:
+* Como administrador:
+ - Adicionar novo produto
+ - Adicionar novo administrador
+ - Verificar se o novo administrador aparece na lista de usuarios disponível no perfil do administrador
+ - Log in e Log out como adiministrador
+* Como usuario:
+ - Se cadastrar
+ - Comprar produto (a ser feito)
 
 ## Test Results
 
@@ -53,7 +63,12 @@ As páginas foram realizadas individualmente pelos 3 membros do grupo, são arqu
 
 ## Build Procedures
 
-Faça o download de todos os arquivos e execute algum dos arquivos HTML presentes no diretório /pages
+Faça o download de todos os arquivos. É necessario ter node instalado na maquina para rodar um servidor local ([guia de instalação do node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
+
+Após instalar rode:
+ - Vá para a pasta SCC0219-Marketplace
+ - Execute ```node index.js```
+ - Abra o navegador e digite o endereço ```localhost:5000```
 
 ## Problems
 
