@@ -18,6 +18,10 @@ document.getElementById("sair").addEventListener("click", function() {
     location.href = "./homepage.html"
 });
 
+document.getElementById("alterar_produto").addEventListener("click", function() {
+    location.href = "./alterar_produto.html"
+});
+
 function pegaUsuariosDoBanco() {
     mostrar = !mostrar
     if(mostrar) {

@@ -15,7 +15,8 @@ function converterImagem() {
             let imagemBase64 = arquivoCarregado.target.result; 
             let produtos = JSON.parse(localStorage.getItem("produtos"))
 
-            produtos[document.getElementById("nome").value] = {
+            produtos[document.getElementById("id").value] = {
+                id : document.getElementById("id").value,
                 nome : document.getElementById("nome").value,
                 descricao : document.getElementById("descricao").value,
                 valor : document.getElementById("preco").value,

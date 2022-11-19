@@ -22,14 +22,22 @@
         </ul>
     </nav>
 
-    <div class="container" id="caixa-principal">
-        <input type="submit" id="add_produto" value="Adicionar produto"></input>
-        <input type="submit" id="add_admin" value="Criar novo administrador"></input>
-        <input type="submit" id="get_usuarios" value="Ver informações de usuario"></input>
-        <input type="submit" id="alterar_produto" value="Alterar informações de produto"></input>
-        <input type="submit" id="sair" value="Sair"></input>
-        <p id="exibir"></p>
-    </div>
+    <div class="container">
+        <div id="produtos"></div>
 
-    <script src="../js/admin.js"></script>
+        
+        <form id="alterar">
+            <p>Digite o id do produto que deseja alterar</p>
+            <input type="text" id="id" required></input>
+            <p>Digite o campo que deseja alterar</p>
+            <input type="text" id="campo" required></input>
+            <p>Digite o novo valor</p>
+            <input type="text" id="novo_valor" required></input>
+            <br>
+            <input type="submit" id="id" ></input>
+
+        </form>
+    </div>
+    <script src="../js/alterar_produto.js"></script>
+
 </body>
