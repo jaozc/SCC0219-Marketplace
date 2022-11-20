@@ -7,12 +7,13 @@ window.onload = function() {
   for (const key in produtos){
     if(produtos.hasOwnProperty(key)){
       containerPrincipal.appendChild(constroiProduto(produtos[key]))
-      console.log(`${key} :` + JSON.stringify(produtos[key]))
+      //  console.log(`${key} :` + JSON.stringify(produtos[key]))
     }
   }
 }
 
 function constroiProduto(produto) {
+  if(produto == undefined) return
   let divConteudo = document.createElement("div")
 
   var image = new Image();
@@ -26,7 +27,7 @@ function constroiProduto(produto) {
   divConteudo.appendChild(criaParagrafo(produto, "descricao"))
   divConteudo.appendChild(criaParagrafo(produto, "quantidade"))
   divConteudo.appendChild(criaParagrafo(produto, "valor"))
-  divConteudo.appendChild(criaDivBotoes())
+  divConteudo.appendChild(criaDivBotoes(produto))
   divConteudo.classList.add("conteudo")
 
   let div = document.createElement("div")
@@ -40,13 +41,20 @@ function constroiProduto(produto) {
   return div
 }
 
-function criaDivBotoes(){
+function criaDivBotoes(produto){
   let divBotoes = document.createElement("div")
+  // console.log(produto);
 
   let botaoComprar = document.createElement("a")
+  botaoComprar.id = "add"
   botaoComprar.classList.add("btn")
   botaoComprar.classList.add("orange")
   botaoComprar.innerHTML = "Comprar"
+  botaoComprar.dataset.valor = produto.valor
+  botaoComprar.dataset.id = produto.id
+  botaoComprar.dataset.nome = produto.nome
+  botaoComprar.addEventListener('click', addToCart)
+
 
   let botaoVisualizar = document.createElement("a")
   botaoVisualizar.classList.add("btn")
@@ -80,4 +88,34 @@ function calculaCep(){
 
 function transformarPrimeiraLetraEmMaiusculo(atributo) {
   return atributo.charAt(0).toUpperCase() + atributo.slice(1);
+}
+
+// Adiciona produto ao carrinho
+const addToCart = (e) => {
+  let cart = {};
+  if (localStorage.getItem('cart')){
+      cart = JSON.parse(localStorage.getItem('cart'));
+  }
+  const item = e.target.dataset;
+  if(cart.hasOwnProperty(item.nome)) {
+    cart[item.nome] =  {
+      id: item.id,
+      nome: item.nome,
+      descricao: item.descricao,
+      valor: item.valor,
+      quantidade: cart[item.nome].quantidade + 1
+    }
+    localStorage.removeItem('cart')
+  }
+  else {
+    cart[item.nome] =  {
+      id: item.id,
+      nome: item.nome,
+      descricao: item.descricao,
+      valor: item.valor,
+      quantidade: 1
+    }
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+
 }

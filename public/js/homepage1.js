@@ -21,12 +21,13 @@ window.onload = function() {
         }
       }
 
-    let produtos = {
-    }
+    let produtos = {}
+    let cart = {}
 
     localStorage.setItem("contadorId", 0)
     localStorage.setItem("bancoDeDados", JSON.stringify(bancoDeDados))
     localStorage.setItem("produtos", JSON.stringify(produtos))
+    localStorage.setItem("cart", JSON.stringify(cart))
 
     window.location.replace("../pages/homepage.html");
 }
