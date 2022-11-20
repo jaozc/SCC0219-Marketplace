@@ -53,6 +53,7 @@ function criaDivBotoes(produto){
   botaoComprar.dataset.valor = produto.valor
   botaoComprar.dataset.id = produto.id
   botaoComprar.dataset.nome = produto.nome
+  botaoComprar.dataset.descricao = produto.descricao
   botaoComprar.addEventListener('click', addToCart)
 
 
@@ -117,5 +118,6 @@ const addToCart = (e) => {
     }
   }
   localStorage.setItem("cart", JSON.stringify(cart));
+  alert('Produto adicionado no carrinho. Quantidade: ' + cart[item.nome].quantidade)
 
 }

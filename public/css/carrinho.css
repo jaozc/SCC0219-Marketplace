@@ -26,6 +26,7 @@ div[class="item"] {
     margin-top: 10px;
     margin-bottom: 40px;
     width: 95%;
+    padding: 10px;
     /* height: 196px; */
     background-color: #988F2A;
     box-shadow: 0px 3px 3px grey;
@@ -83,11 +84,19 @@ p[class="descricao"] {
     color: white;
 }
 
-p[class="preco"] {
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: space-between;
+}
+
+.footer span {
     direction: rtl;
     color: white;
     margin-right: 20px;
-    font-size: 25px;
+    font-size: 1.2rem   ;
 }
 
 .flex-item {
