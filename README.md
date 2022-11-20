@@ -29,6 +29,8 @@ Projeto realizado para disciplina de Introdução ao Desenvolvimento Web no segu
 Criação de um site de marketplace de produtos eletrônicos.
 
 ###  Milestone 01
+  As páginas foram realizadas individualmente pelos 3 membros do grupo, são arquivos brutos de HTML/CSS sem a utilização de frameworks ou bibliotecas externa, exceto    pelo FontAwesome para a utilização de algumas ícones.
+
   Para a primeira entrega o grupo optou por realizar o mockup das seguintes páginas:
   - Homepage;
   - Informações do produto;
@@ -40,12 +42,13 @@ Criação de um site de marketplace de produtos eletrônicos.
   
 ## Comments About the Code
 
-### Milestone 01
-As páginas foram realizadas individualmente pelos 3 membros do grupo, são arquivos brutos de HTML/CSS sem a utilização de frameworks ou bibliotecas externa, exceto pelo FontAwesome para a utilização de algumas ícones.
+### Milestone 2
+
+ As issues foram divididas e realizadas individualmente por cada um dos membros do projeto, cada um foi responsável por analisar e utilizar as ferramentas da própria maneira. 
 
 ## Test Plan
 
-Foram feitos testes manuais para checar se o código funciona de maneira apropriada. O LocalStorage foi utilizado para armazenar os produtos e usuarios do site, imitando um banco de dados.
+Foram feitos testes manuais para checar se o código funciona de maneira apropriada. O LocalStorage foi utilizado para armazenar os produtos e usuarios do site, imitando um banco de dados. O carrinho da aplicação também foi realizado utilizando o Local Storage.
 
 Testes realizados:
 * Como administrador:
@@ -56,10 +59,19 @@ Testes realizados:
 * Como usuario:
  - Se cadastrar
  - Comprar produto (a ser feito)
+* Teste de carrinho
+ - Adicionar diversos produto;
+ - Adicionar vários vezes o mesmo produto;
+ - Comprar mais produtos do que em estoque;
+ - Comprar produtos sem estoque;
+ - Remover produtos do carrinho;
 
 ## Test Results
 
--
+* Como administrador:
+* Como usuario:
+* Teste de carrinho
+ Ao comprar mais produtos do que o disponível em estoque, a aplicação sobreescreve a quantidade selecionada pelo usuário pela quantidade do produto em estoque.
 
 ## Build Procedures
 
@@ -67,12 +79,13 @@ Faça o download de todos os arquivos. É necessario ter node instalado na maqui
 
 Após instalar rode:
  - Vá para a pasta SCC0219-Marketplace
+ - Execute ```npm install```
  - Execute ```node index.js```
  - Abra o navegador e digite o endereço ```localhost:5000```
 
 ## Problems
 
--
+- Local Storage possui um tamanho máximo de 5MB, adicionar muito produtos pode acarretar em um overflow da variável.
 
 ## Comments
 
