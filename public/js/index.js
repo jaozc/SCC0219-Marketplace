@@ -60,6 +60,11 @@ function criaDivBotoes(produto){
   let botaoVisualizar = document.createElement("a")
   botaoVisualizar.classList.add("btn")
   botaoVisualizar.innerHTML = "Visualizar"
+  botaoVisualizar.addEventListener("click", function () {
+    localStorage.setItem("prod", JSON.stringify(produto));
+    location.href = "./prodpage.html";
+  });
+
 
   divBotoes.append(botaoComprar)
   divBotoes.append(botaoVisualizar)
@@ -74,14 +79,18 @@ function criaParagrafo(produto, atributo){
   return paragrafo
 }
 
+/*
 function simulaComprar(){
   alert("Produto adicionado ao seu carrinho!");
 }
+*/
 
+/*
 function finalizaCompra(){
   alert("Sua compra foi finalizada!");
   window.location.replace("../pages/homepage.html");
 }
+*/
 
 function calculaCep(){
   alert("A entrega é R$15 e o prazo é 5 dias úteis.")
