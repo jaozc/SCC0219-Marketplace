@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head lang="pt-br">
+    <title>Log In</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/tela_generica.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <nav class="topnav">
+        <ul>
+            <li><a href="homepage.html" class="active">MARKET PLACE</a></li>
+            <li><a href="#">Contato</a></li>
+            <li class="right"><a  href="./login.html">
+                <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+                Entrar</a></li>
+            <li class="right"><a href="carrinho.html">
+                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                    Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <div class="container login" id="caixa-principal">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <br><br>
+            <input class="action-button" type="submit" id="enviar" name="enviar" value="enviar">
+            <input class="action-button" type="submit" id="cadastrar" name="cadastrar" value="cadastrar">
+    </div>
+
+    <script src="../js/login.js" type="module"></script>
+</body>

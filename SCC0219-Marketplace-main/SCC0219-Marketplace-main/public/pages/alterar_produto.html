@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head lang="pt-br">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/tela_generica.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <nav class="topnav">
+        <ul>
+            <li><a href="homepage.html" class="active">MARKET PLACE</a></li>
+            <li><a href="#">Contato</a></li>
+            <li class="right"><a id="entrar" href="./login.html">
+                <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+                Entrar</a></li>
+            <li class="right"><a href="carrinho.html">
+                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                    Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="produtos"></div>
+
+        
+        <form id="alterar">
+            <p>Digite o id do produto que deseja alterar</p>
+            <input type="text" id="id" required></input>
+            <p>Digite o campo que deseja alterar</p>
+            <input type="text" id="campo" required></input>
+            <p>Digite o novo valor</p>
+            <input type="text" id="novo_valor" required></input>
+            <br>
+            <input type="submit" id="id" ></input>
+
+        </form>
+    </div>
+    <script src="../js/alterar_produto.js"></script>
+
+</body>
