@@ -44,7 +44,8 @@ Criação de um site de marketplace de produtos eletrônicos.
 
 ### Milestone 2
 
- As issues foram divididas e realizadas individualmente por cada um dos membros do projeto, cada um foi responsável por analisar e utilizar as ferramentas da própria maneira. 
+ As issues foram divididas e realizadas individualmente por cada um dos membros do projeto, cada um foi responsável por analisar e utilizar as ferramentas da própria maneira.
+ Foi utilizado o Node.js para a execução da aplicação, junto da biblioteca express para a realização das rotas e de subir o código.
 
 ## Test Plan
 
