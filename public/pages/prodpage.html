@@ -13,18 +13,18 @@
     <nav class="topnav">
         <ul>
             <li><a href="homepage.html" class="active">MARKET PLACE</a></li>
-            <li class="nav-dropdown">
+            <!-- <li class="nav-dropdown">
                 <a href="javascript:void(0)" class="dropdown-btn">Produtos</a>
                 <div class="dropdown-content">
                     <a href="#produto01">Produto 01</a>
                     <a href="#produto02">Produto 02</a>
                     <a href="#produto03">Produto 03</a>
                 </div>
-            </li>
+            </li> -->
             <li><a href="#">Contato</a></li>
-            <li class="right"><a  href="./login.html">
-                <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
-                Entrar</a></li>
+            <li class="right"><a href="./login.html">
+                    <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i>
+                    Entrar</a></li>
             <li class="right"><a href="carrinho.html">
                     <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
                     Carrinho</a></li>
@@ -41,21 +41,28 @@
                     <p class="pagamento">R$ 600,00 em até 6 vezes sem juros.<br>
                         Ou 10% de desconto no PIX.
                     </p>
+                    <br><br><br><br>
+                    <div class="qnt-prod" id="q1">
+                        Quantidade de produtos: 10
+                    </div>
+                    <div class="qnt-vdd" id="q2">
+                        Quantidade vendida: 10
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="total">
-            <div>   
+            <div>
                 <p id="valor-total">Valor: R$ 600,00</p>
             </div>
-            <div> <button class="button" type="button" id="finalizar"
-                    onclick="simulaComprar()">COMPRAR</button> </div>
+            <div> <button class="button" type="button" id="finalizar" onclick="simulaComprar()">COMPRAR</button> </div>
         </div>
 
         <br>
         <p class="cep">Consultar preço e prazo de entrega</p>
-        <input name="CEP" id="CEP" placeholder="Inserir CEP"/>
-        <input type="submit" value="Enviar" onclick="calculaCep()"/>
+        <input name="CEP" id="CEP" placeholder="Inserir CEP" />
+        <input type="submit" value="Enviar" onclick="calculaCep()" />
     </div>
+    <script src="../js/prod_page.js"></script>
 </body>
