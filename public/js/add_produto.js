@@ -21,7 +21,8 @@ function converterImagem() {
                 descricao : document.getElementById("descricao").value,
                 valor : document.getElementById("preco").value,
                 quantidade : document.getElementById("quantidade").value,
-                imagem : imagemBase64
+                imagem : imagemBase64,
+                vendidos : 0
             }
             localStorage.setItem("produtos", JSON.stringify(produtos))
             localStorage.setItem("contadorId", parseInt(localStorage.getItem("contadorId")) + 1)

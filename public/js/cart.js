@@ -6,7 +6,9 @@ const mountCart = async () => {
     let cart = JSON.parse(localStorage.getItem('cart'));
     let cartContainer = document.getElementById("caixa-principal");
     let totalValue = 0;
-    if(cart.length === 0) { // carrinho vazio
+
+    if(Object.keys(cart).length === 0) 
+    { // carrinho vazio
         let emptyCart = document.createElement('h2');
         emptyCart.innerHTML = "Seu carrinho está vazio!";
         cartContainer.appendChild(emptyCart);
@@ -51,9 +53,17 @@ const mountCart = async () => {
             flexItem.appendChild(titleDiv);
             flexItem.appendChild(descpDiv);
             flexItem.appendChild(footerDiv);
+            // remover item
+            let removeItem = document.createElement('a');
+            removeItem.innerHTML = 'remover';
+            removeItem.onclick = deleteItem;
+            removeItem.href = '../pages/carrinho.html';
+            removeItem.dataset.nome = produto.nome;
+            flexItem.appendChild(removeItem);
             item.append(flexItem);
             // inserindo na página
             cartContainer.appendChild(item);
+            
         }
         // Criando div de final da compra
         let checkoutDiv = document.createElement('div');
@@ -70,14 +80,65 @@ const mountCart = async () => {
         checkout.classList.add('button');
         checkout.type = 'button';
         checkout.id= 'finalizar';
-        checkout.onclick='finalizarCompra()';
+        checkout.onclick = finalizaCompra;
         checkout.innerHTML = 'Finalizar';
         divCheckout.appendChild(checkout);
 
         checkoutDiv.appendChild(divValor);
         checkoutDiv.appendChild(divCheckout);
         cartContainer.appendChild(checkoutDiv)
-
-
     }
+}
+
+const finalizaCompra = async () => {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    let produtos = JSON.parse(localStorage.getItem('produtos'));
+    for(const key in cart)  {
+        const item = cart[key];
+        if(verificaQuantidade(item))
+        {
+            produtos[item.id].quantidade -= item.quantidade;
+            produtos[item.id].vendidos += item.quantidade;
+        }
+        else
+        {
+            if(produtos[item.id].quantidade === 0)
+            {
+                alert("Não temos ["+ item.nome +"] em estoque!");
+            } else {
+                alert("Não temos [" + item.nome + "] o suficiente em estoque!");
+                cart[item.nome].quantidade = produtos[item.id].quantidade;
+                localStorage.removeItem('cart');
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.location.replace("../pages/carrinho.html");  
+            }
+            
+            return;
+        }
+    }
+    localStorage.removeItem('produtos');
+    localStorage.setItem('produtos', JSON.stringify(produtos));
+    cart = {};
+    localStorage.removeItem('cart');
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Compra finalizada com sucessso!');
+    window.location.replace("../pages/carrinho.html");
+
+}
+
+const verificaQuantidade = (item) => {
+    let produtos = JSON.parse(localStorage.getItem('produtos'));
+    const quantidadeVendida = item.quantidade;
+    console.log(item)
+    const quantidadeEstoque = produtos[item.id].quantidade;
+    return quantidadeVendida <= quantidadeEstoque;
+}
+
+const deleteItem = async (e) => {
+    const itemNome = e.target.dataset.nome;
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    delete cart[itemNome];
+    localStorage.removeItem('cart');
+    localStorage.setItem('cart', JSON.stringify(cart));
+
 }
