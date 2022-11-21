@@ -1,3 +1,4 @@
+
 # SCC0219 Marketplace
 
 Projeto realizado para disciplina de Introdução ao Desenvolvimento Web no segundo semestre de 2022.  O seguinte projeto tem como intuito a criação de um Marketplace utilizando as ferramentas vistas em aula.
@@ -42,6 +43,8 @@ Criação de um site de marketplace de produtos eletrônicos.
   
 ## Comments About the Code
 
+-
+
 ### Milestone 2
 
  As issues foram divididas e realizadas individualmente por cada um dos membros do projeto, cada um foi responsável por analisar e utilizar as ferramentas da própria maneira.
@@ -74,6 +77,10 @@ Testes realizados:
 * Teste de carrinho
  Ao comprar mais produtos do que o disponível em estoque, a aplicação sobreescreve a quantidade selecionada pelo usuário pela quantidade do produto em estoque.
 
+## Comments About the Code
+
+-
+
 ## Build Procedures
 
 Faça o download de todos os arquivos. É necessario ter node instalado na maquina para rodar um servidor local ([guia de instalação do node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
@@ -91,4 +98,3 @@ Após instalar rode:
 ## Comments
 
 -
-
