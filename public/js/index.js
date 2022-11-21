@@ -59,11 +59,9 @@ function criaDivBotoes(produto){
 
   let botaoVisualizar = document.createElement("a")
   botaoVisualizar.classList.add("btn")
+  botaoVisualizar.dataset.produto = JSON.stringify(produto);
   botaoVisualizar.innerHTML = "Visualizar"
-  botaoVisualizar.addEventListener("click", function () {
-    localStorage.setItem("prod", JSON.stringify(produto));
-    location.href = "./prodpage.html";
-  });
+  botaoVisualizar.addEventListener('click', goToProd)
 
 
   divBotoes.append(botaoComprar)
@@ -128,5 +126,15 @@ const addToCart = (e) => {
   }
   localStorage.setItem("cart", JSON.stringify(cart));
   alert('Produto adicionado no carrinho. Quantidade: ' + cart[item.nome].quantidade)
+
+}
+
+const goToProd = (e) => {
+    let produto = e.target.dataset.produto;
+    produto = JSON.parse(produto)
+    delete produto.imagem;
+    localStorage.removeItem("prod");
+    localStorage.setItem("prod", JSON.stringify(produto));
+    window.location.replace("../pages/prodpage.html"); 
 
 }
