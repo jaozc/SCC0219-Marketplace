@@ -74,8 +74,7 @@ Testes realizados:
 
 * Como administrador:
 * Como usuario:
-* Teste de carrinho
- Ao comprar mais produtos do que o disponível em estoque, a aplicação sobreescreve a quantidade selecionada pelo usuário pela quantidade do produto em estoque.
+* Teste de carrinho: Ao comprar mais produtos do que o disponível em estoque, a aplicação sobreescreve a quantidade selecionada pelo usuário pela quantidade do produto em estoque.
 
 ## Comments About the Code
 
