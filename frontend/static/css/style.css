@@ -1,0 +1,33 @@
+.disabled {
+    pointer-events: none;
+    border-bottom: 1px solid rgba(242,242,242,0.5);
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+@media screen and (max-width: 992px){
+    .ml-25 {
+        margin-left: 0px;
+    }
+}
+
+.description {
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+}
+
+.card-action a{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.bold {
+    font-weight: 600;
+    font-size: 1.2em;
+}

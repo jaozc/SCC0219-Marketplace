@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./static/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="/static/css/style.css" >
+    <title>Home</title>
+</head>
+<body>
+
+  <nav class="deep-orange">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo ml-25" data-link><i class="material-icons left">store</i>Market Place</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/contact" data-link><i class="material-icons left">phone</i>Contato</a></li>
+        <li><a href="/cart" data-link><i class="material-icons left">shopping_cart</i>Carrinho</a></li>
+        <li><a href="/login" data-link><i class="material-icons left">person</i>Entrar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="disabled">Olá, seja bem-vindo(a)!</a></li>
+    <li><a href="/contact" data-link><i class="material-icons left">phone</i>Contato</a></li>
+    <li><a href="/cart" data-link><i class="material-icons left">shopping_cart</i>Carrinho</a></li>
+    <li><a href="/login" data-link><i class="material-icons left">person</i>Entrar</a></li>
+  </ul>
+ 
+  <!-- App Content -->
+  <div id="app"></div>
+
+    <script type="module" src="./static/js/index.js"></script>
+    <script src="./static/js/localStorage.js"></script>
+    <!-- Add jQuery minified 3.6.1 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="./static/js/materialize.min.js"></script>
+</body>
+</html>
