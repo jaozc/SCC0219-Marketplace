@@ -96,6 +96,7 @@ Após instalar rode:
 - É necessário adicionar imagens que estejam no repositório de imagens do projeto quando for feita a adição de um novo produto, para que não haja conflito de caminhos.
 - Algumas páginas quebram quando atualizadas.
 - É possível acessar as áreas de Usuário e Administrador sem estar logado.
+- A página da Área do Administrador não exibe de forma adqueado os tabs feitos, para isso é preciso dar um refresh na mesma após aberta
 
 ## Comments
 
