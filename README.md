@@ -74,8 +74,7 @@ Testes realizados:
 
 * Como administrador:
 * Como usuario:
-* Teste de carrinho
- Ao comprar mais produtos do que o disponível em estoque, a aplicação sobreescreve a quantidade selecionada pelo usuário pela quantidade do produto em estoque.
+* Teste de carrinho: Ao comprar mais produtos do que o disponível em estoque, a aplicação sobreescreve a quantidade selecionada pelo usuário pela quantidade do produto em estoque.
 
 ## Comments About the Code
 
@@ -94,6 +93,7 @@ Após instalar rode:
 ## Problems
 
 - Local Storage possui um tamanho máximo de 5MB, adicionar muito produtos pode acarretar em um overflow da variável.
+- Foi detectado um problema de armazenar imagens relacionado com o problema acima. Atualmente, cada produto tem sua imagem salva em base64 no Local Storage. Devido ao limite de 5 MB, muitos produtos podem acarretar em overflow. Isso será resolvido no próximo milestone.
 
 ## Comments
 
