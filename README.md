@@ -72,13 +72,13 @@ Testes realizados:
 
 ## Test Results
 
-* Como administrador:
-* Como usuario:
-* Teste de carrinho: Ao comprar mais produtos do que o disponível em estoque, a aplicação sobreescreve a quantidade selecionada pelo usuário pela quantidade do produto em estoque.
+* Como administrador: tudo deu certo!
+* Como usuario: tudo deu certo!
+
 
 ## Comments About the Code
 
--
+- Caso um Usuário/Administrador deslogue da aplicação, o carrinho do localStorage é apagado intencionalmente! 
 
 ## Build Procedures
 
@@ -87,13 +87,15 @@ Faça o download de todos os arquivos. É necessario ter node instalado na maqui
 Após instalar rode:
  - Vá para a pasta SCC0219-Marketplace
  - Execute ```npm install```
- - Execute ```node index.js```
- - Abra o navegador e digite o endereço ```localhost:5000```
+ - Execute ```node server```
+ - Abra o navegador e digite o endereço ```localhost:3000```
 
 ## Problems
 
-- Local Storage possui um tamanho máximo de 5MB, adicionar muito produtos pode acarretar em um overflow da variável.
-- Foi detectado um problema de armazenar imagens relacionado com o problema acima. Atualmente, cada produto tem sua imagem salva em base64 no Local Storage. Devido ao limite de 5 MB, muitos produtos podem acarretar em overflow. Isso será resolvido no próximo milestone.
+- Local Storage possui um tamanho máximo de 5MB, adicionar muitos itens pode acarretar em um overflow da variável.
+- É necessário adicionar imagens que estejam no repositório de imagens do projeto quando for feita a adição de um novo produto, para que não haja conflito de caminhos.
+- Algumas páginas quebram quando atualizadas.
+- É possível acessar as áreas de Usuário e Administrador sem estar logado.
 
 ## Comments
 
