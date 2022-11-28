@@ -62,7 +62,7 @@ Testes realizados:
  - Log in e Log out como adiministrador
 * Como usuario:
  - Se cadastrar
- - Comprar produto (a ser feito)
+ - Comprar produto;
 * Teste de carrinho
  - Adicionar diversos produto;
  - Adicionar vários vezes o mesmo produto;
@@ -78,6 +78,9 @@ Testes realizados:
 
 ## Comments About the Code
 
+- A conta de administrador já está criada: 
+  * email: admin@gmail.com 
+  * senha: admin
 - Caso um Usuário/Administrador deslogue da aplicação, o carrinho do localStorage é apagado intencionalmente! 
 
 ## Build Procedures
