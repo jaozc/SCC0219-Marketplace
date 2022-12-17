@@ -6,26 +6,57 @@ export default class extends AbstractView {
     this.setTitle("Cart");
   }
 
-  handleCloseCart() {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    let produtos = JSON.parse(localStorage.getItem("produtos"));
-    for (const id in cart) {
-      console.log(produtos[id]);
-      // Removendo do estoque
-      produtos[id].quantidade -= cart[id].quantidade;
-      // Adicionando como vendido
-      produtos[id].vendidos += cart[id].quantidade;
-    }
-    cart = {};
-    localStorage.setItem("cart", JSON.stringify(cart));
-    localStorage.setItem("produtos", JSON.stringify(produtos));
-    alert("Compra finalizada com sucesso!");
-    window.location.href = "/";
-  }
+  async handleCloseCart() {
+    // let cart = JSON.parse(localStorage.getItem("cart"));
+    // let produtos = JSON.parse(localStorage.getItem("produtos"));
+    // for (const id in cart) {
+    //   console.log(produtos[id]);
+    //   // Removendo do estoque
+    //   produtos[id].quantidade -= cart[id].quantidade;
+    //   // Adicionando como vendido
+    //   produtos[id].vendidos += cart[id].quantidade;
+    // }
+    // cart = {};
+    // localStorage.setItem("cart", JSON.stringify(cart));
+    // localStorage.setItem("produtos", JSON.stringify(produtos));
+    // alert(JSON.parse(localStorage.getItem("cart")))
 
+    for(let key in JSON.parse(localStorage.getItem("cart"))) {
+      // alert(JSON.stringify(key))
+      
+      const body = JSON.stringify({
+        token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTNiNmFmNTA1MjJhYjBkMGQ5NDNlZCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjcxMjk2MDA2LCJleHAiOjE2NzEzMzkyMDZ9.LE4LLrfBqFmiA2Yh03nIOkFx8gr3f_of6DAIEZMiizY",
+        quantity: Math.abs(JSON.parse(localStorage.getItem("cart"))[key].quantidade - JSON.parse(localStorage.getItem("cart"))[key].quantidade_servidor)
+      })
+
+      const options = {
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body,
+      }
+      await fetch('http://localhost:8080/product/' + key, options).then(response => {
+        if(response.status === 400) {
+          throw new Error()
+        }
+        return response.json()    
+      }).then(response => alert(response.message)).catch(error => alert("Não foi possível finalizar compra"))      
+      
+      window.location.href = "/";
+      localStorage.removeItem("cart");
+      localStorage.setItem("cart", JSON.stringify({}));
+
+    }
+  }
+      
+
+  
   handleRemoveItem(e) {
     const itemId = e.target.dataset.id;
     let cart = JSON.parse(localStorage.getItem("cart"));
+    // alert(JSON.stringify(cart[itemId]))
     delete cart[itemId];
     localStorage.removeItem("cart");
     localStorage.setItem("cart", JSON.stringify(cart));

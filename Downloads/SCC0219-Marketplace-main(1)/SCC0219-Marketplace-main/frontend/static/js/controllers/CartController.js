@@ -1,4 +1,11 @@
 export const addToCart = async (e) => {
+
+  if ("{}" == localStorage.getItem("tokenUsuario") || localStorage.getItem("tokenUsuario") == null) {
+    alert("Faça login para comprar")
+    
+    window.location.href = "/login"
+    return
+  }
   let cart = {};
   
   // let produtos = JSON.parse(localStorage.getItem("produtos"));
@@ -23,13 +30,14 @@ export const addToCart = async (e) => {
     return produto
     })
   const produto = await response.json()
-
+  alert(JSON.stringify(produto.quantity))
   let newCart = cart;
   if (cart.hasOwnProperty(item.id)) {
     cart[item.id] = {
       id: item.id,
       nome: item.nome,
       quantidade: cart[item.id].quantidade + 1,
+      quantidade_servidor:produto.quantity,
       urlImage: produto.image,
       descricao: produto.description,
       valor: produto.price*cart[item.id].quantidade
@@ -39,6 +47,7 @@ export const addToCart = async (e) => {
       id: item.id,
       nome: item.nome,
       quantidade: 1,
+      quantidade_servidor:produto.quantity,
       urlImage: produto.image,
       descricao: produto.description,
       valor: produto.price

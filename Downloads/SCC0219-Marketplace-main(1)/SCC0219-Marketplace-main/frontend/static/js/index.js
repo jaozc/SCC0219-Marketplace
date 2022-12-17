@@ -77,22 +77,25 @@ window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
   // Verifica login antes de renderizar o botão
-  const logado = JSON.parse(localStorage.getItem("user"));
+  if(localStorage.getItem("user")) {
+    let arr = document.querySelectorAll("a[href='/login']");
+    const logado = JSON.parse(localStorage.getItem("user"));
     if (logado.role === "admin") {
-    let arr = document.querySelectorAll("a[href='/login']");
-    arr.forEach((el) => {
-      el.href = "/adminArea";
-      el.innerHTML = `<i class="material-icons left">person</i>Administrador</a
-        >`;
-    });
-  } else if (logado.role === "user") {
-    let arr = document.querySelectorAll("a[href='/login']");
-    arr.forEach((el) => {
-      el.href = "/userArea";
-      el.innerHTML = `<i class="material-icons left">person</i>Usuário</a
+      arr.forEach((el) => {
+        el.href = "/adminArea";
+        el.innerHTML = `<i class="material-icons left">person</i>Administrador</a
           >`;
-    });
-  } else {
+      });
+    } else if (logado.role === "user") {
+      let arr = document.querySelectorAll("a[href='/login']");
+      arr.forEach((el) => {
+        el.href = "/userArea";
+        el.innerHTML = `<i class="material-icons left">person</i>Usuário</a
+            >`;
+      });
+    }
+  }
+  else {
     let arr = document.querySelectorAll("a[href='/login']");
     arr.forEach((el) => {
       el.href = "/login";

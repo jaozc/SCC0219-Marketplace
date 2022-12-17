@@ -131,7 +131,7 @@ export const handleUpdateUser = async() => {
   // localStorage.setItem("usuarios", JSON.stringify(usuarios));
   window.location.href = "/";
 
-  // localStorage.setItem("logado", JSON.stringify({}));
-  // localStorage.setItem("cart", JSON.stringify({}));
-  // alert("Perfil alterado, por favor entre novamente!");
+  localStorage.setItem("logado", JSON.stringify({}));
+  localStorage.setItem("cart", JSON.stringify({}));
+  alert("Perfil alterado, por favor entre novamente!");
 };
