@@ -67,7 +67,6 @@ export default class extends AbstractView {
   handleCart() {
     
     let cart = JSON.parse(localStorage.getItem("cart"));
-    console.log(JSON.stringify(cart))
     if (Object.keys(cart).length === 0) {
       let container = document.createElement("div");
       container.classList.add("container");
