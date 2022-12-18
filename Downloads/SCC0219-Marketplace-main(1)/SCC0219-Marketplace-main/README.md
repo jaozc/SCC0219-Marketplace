@@ -41,18 +41,18 @@ Criação de um site de marketplace de produtos eletrônicos.
   
   É possível acessar o seguinte link https://marvelapp.com/prototype/8268f3d para visualizar uma simulação da interação entre as páginas da aplicação nessa entrega.
   
-## Comments About the Code
-
--
 
 ### Milestone 2
 
  As issues foram divididas e realizadas individualmente por cada um dos membros do projeto, cada um foi responsável por analisar e utilizar as ferramentas da própria maneira.
  Foi utilizado o Node.js para a execução da aplicação, junto da biblioteca express para a realização das rotas e de subir o código.
 
+### Milestone 3
+Foram implementadas os rotas para fazer a integração com o backend. Uma breve descrição do que foi feito pode ser visto [aqui](https://github.com/jaozc/SCC0219-Marketplace/tree/master/Downloads/web_backend(1)/web_backend).
+
 ## Test Plan
 
-Foram feitos testes manuais para checar se o código funciona de maneira apropriada. O LocalStorage foi utilizado para armazenar os produtos e usuarios do site, imitando um banco de dados. O carrinho da aplicação também foi realizado utilizando o Local Storage.
+Foram feitos testes manuais para checar se o código funciona de maneira apropriada. No milestone 3, o banco de dados já está funcionando e os ```usuários```, ```produtos``` e ```compras``` estão armazenados nele.
 
 Testes realizados:
 * Como administrador:
@@ -90,12 +90,15 @@ Faça o download de todos os arquivos. É necessario ter node instalado na maqui
 Após instalar rode:
  - Vá para a pasta SCC0219-Marketplace
  - Execute ```npm install```
- - Execute ```node server```
+ - Execute ```npm start```
  - Abra o navegador e digite o endereço ```localhost:3000```
+
+ - Vá para a pasta web_backend dentro de web_backend(1)
+ - Execute ```npm install```
+ - Execute ```npm start```
 
 ## Problems
 
-- Local Storage possui um tamanho máximo de 5MB, adicionar muitos itens pode acarretar em um overflow da variável.
 - É necessário adicionar imagens que estejam no repositório de imagens do projeto quando for feita a adição de um novo produto, para que não haja conflito de caminhos.
 - Algumas páginas quebram quando atualizadas.
 - É possível acessar as áreas de Usuário e Administrador sem estar logado.

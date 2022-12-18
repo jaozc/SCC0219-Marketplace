@@ -7,66 +7,61 @@ export default class extends AbstractView {
   }
 
   async handleCloseCart() {
-    // let cart = JSON.parse(localStorage.getItem("cart"));
-    // let produtos = JSON.parse(localStorage.getItem("produtos"));
-    // for (const id in cart) {
-    //   console.log(produtos[id]);
-    //   // Removendo do estoque
-    //   produtos[id].quantidade -= cart[id].quantidade;
-    //   // Adicionando como vendido
-    //   produtos[id].vendidos += cart[id].quantidade;
-    // }
-    // cart = {};
-    // localStorage.setItem("cart", JSON.stringify(cart));
-    // localStorage.setItem("produtos", JSON.stringify(produtos));
-    // alert(JSON.parse(localStorage.getItem("cart")))
-
-    for(let key in JSON.parse(localStorage.getItem("cart"))) {
-      // alert(JSON.stringify(key))
-      
-      const body = JSON.stringify({
-        token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTNiNmFmNTA1MjJhYjBkMGQ5NDNlZCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwibmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjcxMjk2MDA2LCJleHAiOjE2NzEzMzkyMDZ9.LE4LLrfBqFmiA2Yh03nIOkFx8gr3f_of6DAIEZMiizY",
-        quantity: Math.abs(JSON.parse(localStorage.getItem("cart"))[key].quantidade - JSON.parse(localStorage.getItem("cart"))[key].quantidade_servidor)
-      })
-
-      const options = {
-        method: 'PUT',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body,
-      }
-      await fetch('http://localhost:8080/product/' + key, options).then(response => {
-        if(response.status === 400) {
-          throw new Error()
-        }
-        return response.json()    
-      }).then(response => alert(response.message)).catch(error => alert("Não foi possível finalizar compra"))      
-      
-      window.location.href = "/";
-      localStorage.removeItem("cart");
-      localStorage.setItem("cart", JSON.stringify({}));
-
+    const cartJSON = JSON.parse(localStorage.getItem("cart"));
+    const cartProductsArray = Object.values(cartJSON);
+    let totalPrice = 0
+    const items = cartProductsArray.map(product => ({ product: product.id, quantity: 1 }));
+    for(const product in cartProductsArray) {
+      totalPrice = totalPrice + (cartProductsArray[product].quantidade * cartProductsArray[product].valor)
     }
-  }
-      
+    // const totalPrice = cartProductsArray.length > 1
+    //   ? cartProductsArray.reduce((acumulator, current) => acumulator.valor + current.valor)
+    //   : cartProductsArray[0].valor;
+    const user = JSON.parse(localStorage.getItem("user"))._id;
 
-  
+    const body = JSON.stringify({
+      token: localStorage.getItem('tokenUsuario'),
+      date: new Date(),
+      hour: new Date().getHours(),
+      user,
+      items,
+      totalPrice,
+    });
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body,
+    }
+
+    await fetch('http://localhost:8080/order', options).then(response => {
+      if(response.status === 400) { throw new Error(); }
+
+      return response.json();
+    }).then(response => {
+      alert(response.message);
+      window.location.href = "/";
+      localStorage.setItem("cart", JSON.stringify({}));
+    }).catch(_ => alert("Não foi possível finalizar compra"));
+  }
+
   handleRemoveItem(e) {
     const itemId = e.target.dataset.id;
     let cart = JSON.parse(localStorage.getItem("cart"));
-    // alert(JSON.stringify(cart[itemId]))
     delete cart[itemId];
+
     localStorage.removeItem("cart");
     localStorage.setItem("cart", JSON.stringify(cart));
+
     window.location.reload()
-    //window.location("/cart");
   }
 
   handleCart() {
-    
     let cart = JSON.parse(localStorage.getItem("cart"));
+
     if (Object.keys(cart).length === 0) {
       let container = document.createElement("div");
       container.classList.add("container");

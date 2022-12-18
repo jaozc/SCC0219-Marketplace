@@ -30,7 +30,6 @@ export const addToCart = async (e) => {
     return produto
     })
   const produto = await response.json()
-  alert(JSON.stringify(produto.quantity))
   let newCart = cart;
   if (cart.hasOwnProperty(item.id)) {
     cart[item.id] = {
